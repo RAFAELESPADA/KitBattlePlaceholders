@@ -112,13 +112,13 @@ import me.wazup.kitbattle.main;
   public String onPlaceholderRequest(Player p, String indentifier)
   {
     if (indentifier.equals("kills")) {
-      return String.valueOf(me.wazup.kitbattle.main.plugin.getPlayersConfig().getInt("Players." + p + ".Kills"));
+      return String.valueOf(me.wazup.kitbattle.main.plugin.getPlayersConfig().getInt("Players." + p.getName() + ".Kills"));
     }
     if (p == null) {
       return "";
     }
     if (indentifier.equals("deaths")) {
-    	  return String.valueOf(me.wazup.kitbattle.main.plugin.getPlayersConfig().getInt("Players." + p + ".Death"));
+    	  return String.valueOf(me.wazup.kitbattle.main.plugin.getPlayersConfig().getInt("Players." + p.getName() + ".Death"));
     	    
     }
     if (indentifier.equals("xp")) {
