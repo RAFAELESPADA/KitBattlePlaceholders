@@ -13,7 +13,7 @@ public class Main extends JavaPlugin {
 	if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null){
 		/* 151 */       Bukkit.getConsoleSender().sendMessage("§e[KITBATTLE] §aPlaceHolderAPI is found!");
 		/* 151 */       Bukkit.getConsoleSender().sendMessage("§e[KITBATTLE] §aHooking into it!");
-	    new PlaceHolderAPIHook(this, new me.wazup.kitbattle.main()).register();
+	    new PlaceHolderAPIHook(this, null).register();
 		/* 151 */       Bukkit.getConsoleSender().sendMessage("§e[KITBATTLE] §aPlaceHolderAPI has hooked sucefully!");
 	}
 }
