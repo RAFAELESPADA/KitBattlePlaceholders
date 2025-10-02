@@ -11,23 +11,27 @@ import me.wazup.kitbattle.main;
  * This class will be registered through the register-method in the 
  * plugins onEnable-method.
  */
+
  public class PlaceHolderAPIHook extends PlaceholderExpansion {
 
-	 /*    */   
-	 /*    */   static Main plugin;
+static Main plugin;
 
-    /**
-     * Since we register the expansion inside our own plugin, we
-     * can simply use this method here to get an instance of our
-     * plugin.
-     *
-     * @param plugin
-     *        The instance of our plugin.
-     */
-    /*    */   public PlaceHolderAPIHook(Main main)
+private main plugin2;
+	 /*    */   
+
+//     * Since we register the expansion inside our own plugin, we
+  //   * can simply use this method here to get an instance of our
+    // * plugin.
+    // *
+    // * @param plugin
+    // *        The instance of our plugin.
+   //  */
+    /*    */   public PlaceHolderAPIHook(Main main, main main2)
     /*    */   {
     /* 20 */     this.plugin = main;
     /* 21 */     plugin = main;
+    plugin2 = main2;
+    this.plugin2 = main2;
     /*    */   }
     /*    */   
 
@@ -113,38 +117,32 @@ import me.wazup.kitbattle.main;
 
     if (indentifier.equals("kills")) {
 
-    	main m = new me.wazup.kitbattle.main();
-      return String.valueOf(m.getPlayersConfig().getInt("Players." + p.getName() + ".Kills"));
+      return String.valueOf(plugin2.getPlayersConfig().getInt("Players." + p.getName() + ".Kills"));
     }
     if (p == null) {
       return "";
     }
     if (indentifier.equals("deaths")) {
 
-    	main m = new me.wazup.kitbattle.main();
-    	  return String.valueOf(m.getPlayersConfig().getInt("Players." + p.getName() + ".Death"));
+    	  return String.valueOf(plugin2.getPlayersConfig().getInt("Players." + p.getName() + ".Death"));
     	    
     }
     if (indentifier.equals("xp")) {
-    	main m = new me.wazup.kitbattle.main();
-      return String.valueOf(Integer.valueOf(m.getExp(p)));
+      return String.valueOf(Integer.valueOf(plugin2.getExp(p)));
     }
     if (indentifier.equals("nextxp")) {
-    	main m = new me.wazup.kitbattle.main();
-        m.getNextExp(p);
+    	plugin2.getNextExp(p);
       }
 
     if (indentifier.equals("killstreak")) {
 
-    	main m = new me.wazup.kitbattle.main();
-        return String.valueOf(m.killstreak.get(p.getName()));
+        return String.valueOf(plugin2.killstreak.get(p.getName()));
     }
 
     if (indentifier.equals("tokens")) {
 
-    	main m = new me.wazup.kitbattle.main();
 
-      return String.valueOf(m.getTokens(p));
+      return String.valueOf(plugin2.getTokens(p));
     }
    
     return null;
