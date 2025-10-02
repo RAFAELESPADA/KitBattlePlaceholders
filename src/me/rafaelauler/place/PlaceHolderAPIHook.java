@@ -16,7 +16,6 @@ import me.wazup.kitbattle.main;
 	 /*    */   
 	 /*    */   static Main plugin;
 
-	  private main main;
     /**
      * Since we register the expansion inside our own plugin, we
      * can simply use this method here to get an instance of our
@@ -111,14 +110,19 @@ import me.wazup.kitbattle.main;
     @Override
   public String onPlaceholderRequest(Player p, String indentifier)
   {
+
     if (indentifier.equals("kills")) {
-      return String.valueOf(me.wazup.kitbattle.main.plugin.getPlayersConfig().getInt("Players." + p.getName() + ".Kills"));
+
+    	main m = new me.wazup.kitbattle.main();
+      return String.valueOf(m.getPlayersConfig().getInt("Players." + p.getName() + ".Kills"));
     }
     if (p == null) {
       return "";
     }
     if (indentifier.equals("deaths")) {
-    	  return String.valueOf(me.wazup.kitbattle.main.plugin.getPlayersConfig().getInt("Players." + p.getName() + ".Death"));
+
+    	main m = new me.wazup.kitbattle.main();
+    	  return String.valueOf(m.getPlayersConfig().getInt("Players." + p.getName() + ".Death"));
     	    
     }
     if (indentifier.equals("xp")) {
@@ -131,7 +135,9 @@ import me.wazup.kitbattle.main;
       }
 
     if (indentifier.equals("killstreak")) {
-        return String.valueOf(me.wazup.kitbattle.main.plugin.killstreak.get(p.getName()));
+
+    	main m = new me.wazup.kitbattle.main();
+        return String.valueOf(m.killstreak.get(p.getName()));
     }
 
     if (indentifier.equals("tokens")) {
