@@ -16,7 +16,6 @@ import me.wazup.kitbattle.main;
 
 static Main plugin;
 
-private main plugin2;
 	 /*    */   
 
 //     * Since we register the expansion inside our own plugin, we
@@ -30,8 +29,6 @@ private main plugin2;
     /*    */   {
     /* 20 */     this.plugin = main;
     /* 21 */     plugin = main;
-    plugin2 = main2;
-    this.plugin2 = main2;
     /*    */   }
     /*    */   
 
@@ -117,32 +114,32 @@ private main plugin2;
 
     if (indentifier.equals("kills")) {
 
-      return String.valueOf(plugin2.getPlayersConfig().getInt("Players." + p.getName() + ".Kills"));
+      return String.valueOf(main.getPlugin(main.class).getPlayersConfig().getInt("Players." + p.getName() + ".Kills"));
     }
     if (p == null) {
       return "";
     }
     if (indentifier.equals("deaths")) {
 
-    	  return String.valueOf(plugin2.getPlayersConfig().getInt("Players." + p.getName() + ".Death"));
+    	  return String.valueOf(main.getPlugin(main.class).getPlayersConfig().getInt("Players." + p.getName() + ".Death"));
     	    
     }
     if (indentifier.equals("xp")) {
-      return String.valueOf(Integer.valueOf(plugin2.getExp(p)));
+      return String.valueOf(Integer.valueOf(main.getPlugin(main.class).plugin.getExp(p)));
     }
     if (indentifier.equals("nextxp")) {
-    	plugin2.getNextExp(p);
+    	main.plugin.plugin.getNextExp(p);
       }
 
     if (indentifier.equals("killstreak")) {
 
-        return String.valueOf(plugin2.killstreak.get(p.getName()));
+        return String.valueOf(main.getPlugin(main.class).killstreak.get(p.getName()));
     }
 
     if (indentifier.equals("tokens")) {
 
 
-      return String.valueOf(plugin2.getTokens(p));
+      return String.valueOf(main.getPlugin(main.class).getTokens(p));
     }
    
     return null;
