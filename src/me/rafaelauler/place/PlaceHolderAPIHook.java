@@ -2,6 +2,7 @@ package me.rafaelauler.place;
 
 
 import org.bukkit.entity.Player;
+
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import me.wazup.kitbattle.main;
 
@@ -130,7 +131,7 @@ import me.wazup.kitbattle.main;
       }
 
     if (indentifier.equals("killstreak")) {
-        return String.valueOf(me.wazup.kitbattle.main.plugin.killstreak.get(p));
+        return String.valueOf(me.wazup.kitbattle.main.plugin.killstreak.get(p.getName()));
     }
 
     if (indentifier.equals("tokens")) {
